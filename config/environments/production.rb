@@ -65,3 +65,7 @@ SisoClient::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 end
+
+SISO_APP_ID = "SISO_APP_ID"
+SISO_APP_SECRET = "SISO_APP_SECRET"
+SISO_APP_URL = "SISO_APP_URL"

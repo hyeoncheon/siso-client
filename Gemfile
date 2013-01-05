@@ -37,3 +37,6 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug'
+
+### local gems
+gem 'omniauth-oauth2'

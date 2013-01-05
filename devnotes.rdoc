@@ -1,0 +1,51 @@
+= Development Note
+
+== Install and Setup Basement
+
+initialize app tree/repository
+
+ $ rails new siso-client --skip-bundle; cd siso-client
+ <...>
+ $ git init; git add .; git commit -m "new rails app 'siso-client'."
+ <...>
+ $ git remote add origin git@github.com:hyeoncheon/siso-client.git
+ $ git push -u origin master
+ <...>
+
+bundle gems.
+
+ $ cat >>Gemfile<<EOF
+ > 
+ > ### local gems
+ > gem 'omniauth-oauth2'
+ > EOF
+ $ bundle install --path=$HOME/.gem
+ <...>
+
+setup omniauth for SiSO
+
+ $ cat >>config/initializers/omniauth.rb<<EOF
+ > require 'omniauth-siso'
+ >
+ > Rails.application.config.middleware.use OmniAuth::Builder do
+ >   provider :siso, SISO_APP_ID, SISO_APP_SECRET, :client_options => {:site => SISO_APP_URL}
+ > end
+ > EOF
+ $ cat >> config/environments/development.rb <<EOF
+ > 
+ > SISO_APP_ID = "SISO_APP_ID"
+ > SISO_APP_SECRET = "SISO_APP_SECRET"
+ > SISO_APP_URL = "SISO_APP_URL"
+ > EOF
+ $ cat >> config/environments/production.rb <<EOF
+ >
+ > SISO_APP_ID = "SISO_APP_ID"
+ > SISO_APP_SECRET = "SISO_APP_SECRET"
+ > SISO_APP_URL = "SISO_APP_URL"
+ > EOF
+ $ mkdir -p lib/omniauth/strategies lib/omniauth/siso
+ $ vi lib/omniauth-siso.rb
+ $ vi lib/omniauth/siso.rb
+ $ vi lib/omniauth/siso/version.rb
+ $ vi lib/omniauth/strategies/siso.rb
+

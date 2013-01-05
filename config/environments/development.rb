@@ -35,3 +35,7 @@ SisoClient::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 end
+
+SISO_APP_ID = "SISO_APP_ID"
+SISO_APP_SECRET = "SISO_APP_SECRET"
+SISO_APP_URL = "SISO_APP_URL"
