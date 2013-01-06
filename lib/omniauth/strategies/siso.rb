@@ -15,7 +15,10 @@ module OmniAuth
       
       info do
         {
-          :mail => raw_info['mail']
+          :name => raw_info['name'],
+          :email => raw_info['mail'],
+          :nickname => raw_info['mail'],
+          :image => nil
         }
       end
 
