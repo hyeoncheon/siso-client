@@ -19,7 +19,7 @@ module OmniAuth
           :email => raw_info['mail'],
           :nickname => raw_info['mail'],
           :image => raw_info['image'],
-	  :phone => raw_info['phone'] + ' ' + raw_info['mobile']
+	  :phone => raw_info['phone'].to_s + ' ' + raw_info['mobile'].to_s
         }
       end
 
