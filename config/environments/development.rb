@@ -36,6 +36,9 @@ SisoClient::Application.configure do
   config.assets.debug = true
 end
 
-SISO_APP_ID = "SISO_APP_ID"
-SISO_APP_SECRET = "SISO_APP_SECRET"
-SISO_APP_URL = "SISO_APP_URL"
+SISO_APP_ID = "c0833d6c6f1b4650c1a755e0ba3ca4a7f9f869c3f45522c6f2bb9c64db8306b1"
+SISO_SECRET = "5f299b1de392546e02eb62a5280043c2b5379590a4f0eff69e80762396538d48"
+
+SISO_SITE = "http://sandbox.example.com"
+SISO_AUTHORIZE_URL = "/siso/oauth/authorize"
+SISO_TOKEN_URL = "/siso/oauth/token"

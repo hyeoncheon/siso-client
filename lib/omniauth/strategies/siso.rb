@@ -4,11 +4,13 @@ require 'omniauth-oauth2'
 module OmniAuth
   module Strategies
     class Siso < OmniAuth::Strategies::OAuth2
-      option :name, :siso
-      
+      option :name, "siso"
+
+      # default values
       option :client_options, {
-        :site => "http://localhost:4000",
-        :authorize_path => "/oauth/authorize"
+        :site => "http://sandbox.example.com",
+        :authorize_url => "/siso/oauth/authorize",
+        :token_url => "/siso/oauth/token"
       }
       
       uid { raw_info['id'] }
@@ -30,7 +32,7 @@ module OmniAuth
       end
       
       def raw_info
-        @raw_info ||= access_token.get('/api/v1/me.json').parsed
+        @raw_info ||= access_token.get('/siso/api/v1/me.json').parsed
       end
     end
   end

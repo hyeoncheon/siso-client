@@ -66,6 +66,10 @@ SisoClient::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 end
 
-SISO_APP_ID = "SISO_APP_ID"
-SISO_APP_SECRET = "SISO_APP_SECRET"
-SISO_APP_URL = "SISO_APP_URL"
+SISO_APP_ID = "APP_ID_FROM_PROVIDOR"
+SISO_SECRET = "SECRET_FROM_PROVIDOR"
+
+# below is default, uncomment and edit for your requirement.
+#SISO_SITE = "http://sandbox.example.com"
+#SISO_AUTHORIZE_URL = "/siso/oauth/authorize"
+#SISO_TOKEN_URL = "/siso/oauth/token"
